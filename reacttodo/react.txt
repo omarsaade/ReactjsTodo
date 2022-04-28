@@ -1,0 +1,94 @@
+  we also leanned a little bit more about what hooks are.Hoks are functions
+  that let you "hook" into React function components.Their names
+  alwyas start with use , and there are more hooks we havent seen yet.
+
+: usetstate();
+usereducer();
+.....
+w hye bteje bel functional components.
+
+deyman btebda bi use !
+  
+=====================================
+
+usetState() hye el function li bta3mul render
+w kamen 
+hooks
+
+=========================
+//2meth of writing functional component with hooks
+
+import React, { useState } from 'react';
+
+function App() {
+  //destructuring
+  const [counter, setCounter] = useState(0);
+  //    [name   , function name] =
+  // const counter = useState(0)[0];
+
+  return (
+    <div>
+      <h1>{counter}</h1>
+      <button onClick={()=>setCounter(counter+1)}>Count up</button>
+    </div>
+  );
+}
+
+export default App;
+
+====================
+// import React, { Component } from 'react';
+
+// class App extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       counter: 0
+//     };
+
+
+//   }
+//   handleIncrement = () => {
+//     this.setState({
+//       counter: this.state.counter + 1
+//     })
+//   };
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.state.counter}</h1>
+//         <button onClick={this.handleIncrement}>Click</button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+/////////////////////
+
+import React, { useState } from 'react';
+
+function App() {
+  //destructuring
+  //much more cleaner and readable
+  const [counter, setCounter] = useState(0);
+  //    [name   , function name] =
+  // const counter = useState(0)[0];
+
+
+  function countUp() {
+    setCounter(counter + 1);
+
+  }
+
+  return (
+    <div>
+      <h1>{counter}</h1>
+      <button onClick={countUp}>Count up</button>
+    </div>
+  );
+}
+
+export default App; 
