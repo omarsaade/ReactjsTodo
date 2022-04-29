@@ -27,11 +27,27 @@ class App extends Component {
     this.setState({ counters });
   }
 
+  onDelete = (id) => {
+    let resulto = this.state.counters.filter(counter => counter.id !== id)
+    console.log(resulto);
+    this.setState({ counters: resulto });
+  }
+
+  reset = () => {
+    const res = this.state.counters.map(counter => counter.value = 0)
+    console.log(res);
+    this.setState({ res });
+
+  }
+
+
   render() {
     return (
-      <div>
+      <div className="container m-2">
+        <button onClick={this.reset} className="btn btn-primary">Reset</button>
         {this.state.counters.map(counter => <Counter
           key={counter.id}
+          delete={this.onDelete}
           Increment={this.onIncrement}
           counter={counter}
         />)
