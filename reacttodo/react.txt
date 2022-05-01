@@ -320,6 +320,8 @@ console.log(secondPerson);//Manu
 
 hik mnkun 5ala2na real copy
 
+
+
 =======================================
 
 
