@@ -92,3 +92,247 @@ function App() {
 }
 
 export default App; 
+=================================================
+Es6-Arrow functions
+
+1) function myfunction(name){
+console.log(name);
+}
+myfunction("ali");
+
+
+
+1,1)
+ const printMyName = () => {
+  console.log("ali")
+}
+printMyName();
+
+
+
+
+1,2)  const printMyName = (name)=>{
+  console.log(name,age)
+}
+printMyName("Max");
+
+
+
+
+
+2) const printMyName = (name,age)=>{
+  console.log(name,age)
+}
+printMyNAme("ali",22);
+
+
+
+
+
+3) const multiply = (number) => {
+  return number * 2;
+}
+
+console.log(multiply(2));
+
+
+
+
+
+3,1) const multiply = number => number * 2;
+console.log(multiply(2));
+
+=================================
+
+exports and imports
+
+default export:
+
+import person from './person.js'
+imoprt prs from './person.js'
+
+named export:
+
+import {smth} from './utility.js'
+
+import {smth as Smth } from './utility.js'
+
+import * as bundled from './utility.js'
+==================================================
+understanding classes:
+
+class Human {
+  gender = 'male';
+  printmyName = () => {
+    console.log(this.gender);
+  }
+}
+
+const person = new Human();
+person.printmyName();
+
+===========================
+
+class Human {
+  gender = 'male';
+  printmyName = () => {
+    console.log(this.gender);
+  }
+}
+
+
+
+class p extends Human {
+ color= 'blue';
+ gender='female';
+}
+
+const po = new p();
+console.log(po.gender);
+po.printmyName();
+
+=======================
+spread opeators :nasher aw raha (array or object)
+
+const newArray = [...oldArray,2,3];
+const newObject = {...oldObject,newProp:5}
+======================
+const hell = [1,2,3,4]
+
+const zbell = [...hell,5,6,7,8]
+
+console.log(zbell);
+
+===================================
+const hell = {
+  a:2,
+  b:3
+}
+
+const ma ={...hell,c:4};
+console.log(ma)
+======================================
+Rest opeators its the same opeator but use differently
+its use to merge a list of function arguments into an array
+
+so we use it into a function argument list
+=======================
+Rest:
+
+const fa = (...args) => {
+  return args.sort();
+}
+
+console.log(fa(2,1,3));
+
+================================
+const fa = (...args) => {
+  return args.filter(x=>x===1);
+}
+
+console.log(fa(2,1,3));
+
+jaweb: [1]
+==========================================
+Destructuring
+Destructuring allow you to easily extract array elemenst or object
+properties and store them in variables
+
+array:
+[a,b] =["ali",'ahmed']
+console.log(a);
+console.log(b);
+
+=======================
+object:
+
+
+const {name}={name:'Max', age:28}
+console.log(name);//max
+console.log(age);//undefined
+
+===========================
+Array Destructuring:
+
+const numbers = [1,2,3];
+[num1, ,num3] = numbers;
+console.log(num1,num3);
+
+===========================
+
+19.
+Primitives type: numbers , strings ,booleans
+when u reassign or you store a variable in aonther variable
+it will copy the value;
+
+example:
+const number = 1;
+const num2 = number;
+
+console.log(num2); //1
+
+
+
+Object and arrays are reference types:
+example:
+
+
+const person = {
+  name:'Max'
+};
+
+const secondPerson = person;
+person.name ='Manu';
+console.log(secondPerson);//max
+
+
+//hon bya3mul copy lal pointer li huwe key
+
+w hon shuf shu bisir ::::::::::::::::
+
+
+const person = {
+  name:'Max'
+};
+
+const secondPerson = person;
+person.name = 'Manu';
+console.log(secondPerson);//Manu
+
+W HEDA MESH MA2BUL WEL SABAB ano huwe taba3 el pointer
+
+fa shu el 7all la yetab3o nafso?
+w the same for arrays...
+
+so shu el 7alll???????
+
+7all:
+
+const person = {
+  name:'Max'
+};
+
+const secondPerson = {
+  ...person
+  };
+person.name = 'Manu';
+console.log(secondPerson);//Manu
+
+hik mnkun 5ala2na real copy
+
+=======================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
