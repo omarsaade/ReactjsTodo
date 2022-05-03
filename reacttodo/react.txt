@@ -262,7 +262,7 @@ console.log(num1,num3);
 
 19.
 Primitives type: numbers , strings ,booleans
-when u reassign or you store a variable in aonther variable
+when u reassign or you store a variable in another variable
 it will copy the value;
 
 example:
@@ -321,8 +321,65 @@ console.log(secondPerson);//Manu
 hik mnkun 5ala2na real copy
 
 
-
 =======================================
+20.Refreshing array function
+===========
+Section 3
+
+index.js is the first file to execute
+
+import ReactDOM from 'react-dom/client';
+//import reactdom object men react-dom library
+
+./x ====> yaane please look at the same folder w 3tine el x
+
+jsx : javascript xml
+
+cz html huwe xml w huwe maktub bi javascript file
+fa sammaynehh jsx
+
+regular javascript yaane normal javascript
+yaane vanilla javascript
+
+===============
+ExpenseItem.js
+
+import './ExpenseItem.css'
+function ExpenseItem() {
+    const expenseDate = new Date(2021, 2, 28);
+    const expenseTitle = 'Car Insurance';
+    const expenseAmount = 294.67;
+
+
+    return (
+        <div className='expense-item'>
+            <div>{expenseDate.toISOString()}</div>
+            <div className='expense-item__descritpion'>
+                <h2>{expenseTitle}</h2>
+                <div className='expense-item__price'>${expenseAmount}</div>
+            </div>
+        </div>
+    );
+}
+
+export default ExpenseItem;
+===========================
+App.js
+
+import ExpenseItem from "./components/ExpenseItem";
+
+function App() {
+  return (
+    <div>
+      <h1>hello</h1>
+      <ExpenseItem></ExpenseItem>
+    </div>
+  );
+}
+
+export default App;
+
+=========================================
 
 
 
