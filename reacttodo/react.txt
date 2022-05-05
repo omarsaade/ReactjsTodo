@@ -381,8 +381,8 @@ export default App;
 
 =========================================
 
-
-
+Declarative languages, also called nonprocedural or very high level, are programming languages in which (ideally) a program specifies what is to be done rather than how to do it.
+اللغات التصريحية ، التي تسمى أيضًا غير الإجرائية أو المستوى العالي جدًا ، هي لغات برمجة يحدد فيها البرنامج (بشكل مثالي) ما يجب القيام به بدلاً من كيفية القيام بذلك.
 
 
 
