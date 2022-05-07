@@ -383,7 +383,116 @@ export default App;
 
 Declarative languages, also called nonprocedural or very high level, are programming languages in which (ideally) a program specifies what is to be done rather than how to do it.
 اللغات التصريحية ، التي تسمى أيضًا غير الإجرائية أو المستوى العالي جدًا ، هي لغات برمجة يحدد فيها البرنامج (بشكل مثالي) ما يجب القيام به بدلاً من كيفية القيام بذلك.
+=================
+we can have 3 useState and we can have one
+ its normal and the same
 
+ ===================
+ one state:
+
+
+   const [userInput, setUserInput] = useState({
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: ''
+    });
+
+    const titleChangeHandler = (event) => {
+        setUserInput({
+            ...userInput,
+            enteredTitle: event.target.value,
+        });
+    }
+
+
+    const amountChangeHandler = (event) => {
+        setUserInput({
+            ...userInput,
+            enteredAmount: event.target.value,
+        });
+    }
+
+
+    const dateChangeHandler = (event) => {
+        setUserInput({
+            ...userInput,
+            enteredDate: event.target.value,
+        });
+    }
+
+
+RESULTo::::::::::::::::::::
+
+
+State:{enteredAmount: "0.01", enteredDate: "2022-05-13", …}
+enteredTitle:"babhass"
+enteredAmount:"0.01"
+enteredDate:"2022-05-13"
+
+
+======================
+mutiple State:
+
+ const [enteredTitle, setEnteredTitle] = useState("");
+    const [enteredAmount, setEnteredAmount] = useState("");
+    const [enteredDate, setEnteredDate] = useState("");
+
+    const titleChangeHandler = (event) => {
+        setEnteredTitle(event.target.value);
+    }
+    const amountChangeHandler = (event) => {
+        setEnteredAmount(event.target.value);
+    }
+    const dateChangeHandler = (event) => {
+        setEnteredDate(event.target.value);
+    }
+
+
+
+RESULT:
+hooks
+
+
+1 State: "babhas"
+2 State: "0.01"
+3 State: "2022-05-13"
+
+
+==============================================================
+ one state:
+if u depened on prevState use this approach
+
+
+the best and guarante mutiple State method
+
+    const [userInput, setUserInput] = useState({
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: ''
+    });
+
+    const titleChangeHandler = (event) => {
+        setUserInput((prevState) => {
+            return { ...prevState, enteredTitle: event.target.value };
+        });
+    }
+
+
+    const amountChangeHandler = (event) => {
+        setUserInput((prevState) => {
+            return { ...prevState, enteredAmount: event.target.value };
+        });
+    }
+
+
+    const dateChangeHandler = (event) => {
+        setUserInput((prevState) => {
+            return { ...prevState, enteredDate: event.target.value };
+        });
+    }
+
+=============================================================================
+=================================================================================================================================
 
 
 
