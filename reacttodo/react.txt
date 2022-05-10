@@ -493,6 +493,21 @@ the best and guarante mutiple State method
 
 =============================================================================
 =================================================================================================================================
+1-add new compomnent
+2-Use those 2 files
+3-our Challenge: 
+listen to changes on that dropdown 
+and when the user does select a new state 
+does select a new year from the dropdown
+(does change the selected value) u should listen to that event and u should than make sure that this picked year that the user choose ,this picked value is in the end forwarded to this expenses component ,u should aslo add the expense filter in the expenses.js , and u should than
+forward the picked year from expense filter to this expenses component , and here in the expenses component store it in a state . u dont need to update anything yet u dont need to filter the list of expenses yet cz we had really learn how that worked , i just want u to listen to
+this onchange event than forward the data to a higher level component to the expense component and in that component store it in a state
+
+====================================
+Two way binding : yaane ma bas mnesma3 ("onClick,on...)
+la2 kamen fina n3adel 3laya w nhet value=""  w he el value
+mnjiba men 5ilel el state.
+==================================================
 
 
 
