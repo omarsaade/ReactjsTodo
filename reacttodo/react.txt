@@ -324,6 +324,12 @@ hik mnkun 5ala2na real copy
 =======================================
 20.Refreshing array function
 ===========
+
+
+That's correct! useState returns an array with exactly two elements - the second element is always a function which you can call to set a new value for your state. Calling that function will
+ then also trigger React to re-evaluate the component.
+
+
 Section 3
 
 index.js is the first file to execute
@@ -504,14 +510,92 @@ forward the picked year from expense filter to this expenses component , and her
 this onchange event than forward the data to a higher level component to the expense component and in that component store it in a state
 
 ====================================
+Twi way binding is very useful when u work with forms 
+cz it allows you to gather user input but then also changed
+
+
 Two way binding : yaane ma bas mnesma3 ("onClick,on...)
 la2 kamen fina n3adel 3laya w nhet value=""  w he el value
 mnjiba men 5ilel el state.
 ==================================================
+Controlled Component
+
+====Controlled Component:====
+=============================
+EXPENSES FILTER HUWE CONTROLLED COMPONENT
+
+bas ykun fi two way binding == yaane fi Controlled Component
+
+***yaane el value li ijet men el onChange ((onChange={dropdownChangeHandler}))
+nba3atet lal parent component men 5ilel el props ((props.onChangeFilter(event.target.value);))
+
+w rje3na stalamneha men 5ilel el props ((value={props.selected}))
+
+===========================================
+Esma: yaane mafia state
+stateless component
+dumb component
+presentational component
+==============================
+statefull or smart bi 3aksa
+======================
+deyman bikun fi stateless component aktar men el statefull
+
+==========================================================
+That's correct! useState returns an array with 
+exactly two elements - the second element is always a function which you can call to set a new value for your state. Calling that function will then
+ also trigger React to re-evaluate the component.
+ ======================
+
+ Question 9:
+What's wrong about this code snippet?
 
 
 
+const [counter, setCounter] = useState(1);
+...
+setCounter(counter + 1);
 
+response:
+?there is nothing wrong about it :False
+?state cant be a number:False
+?if u update state that depends on the previous state 
+, you should use the "function form" of the state updating function
+instead.
+
+example:
+import React, { useState } from 'react';
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+=======================================
+iza bethet array of object like this
+bel javascript..btarje3 mu7tawa el array
+wara baado bel page...
+mishennnn hik ne7na mnesta3mel map method
+li2an hye btraje3lna el mu7tawa wara baado 3ade
+:::::::::::::
+expense.js
+
+ return (
+        <div>
+               {[<ExpenseItem />, 8, 18, 32]}
+
+ </div>
+
+===============================================
 
 
 
