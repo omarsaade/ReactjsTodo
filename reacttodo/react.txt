@@ -596,10 +596,27 @@ expense.js
  </div>
 
 ===============================================
+iza ma 3andak id METEL HON TAHET!SHU FIK TA3MUL?
 
+  {props.items.map(expense =>
+                    <ExpenseItem
+                        key={expense.id}
+                        title={expense.title}
+                        amount={expense.amount}
+                        date={expense.date} />
+                )}
 
+FIK TESa3mel el index bas ensaaaaa
 
+ {props.items.map((expense , index ) =>
+                    <ExpenseItem
+                        key={expense.id}
+                        title={expense.title}
+                        amount={expense.amount}
+                        date={expense.date} />
+                )}
 
+khalik 3al uniqueeee clear idddd azabt shi ,yaane he keneet
+ma3lume 3amme
 
-
-
+=====================================
