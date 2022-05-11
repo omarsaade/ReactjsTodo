@@ -620,3 +620,15 @@ khalik 3al uniqueeee clear idddd azabt shi ,yaane he keneet
 ma3lume 3amme
 
 =====================================
+
+Conditional Content
+::::
+const a = "hello";
+
+
+console.log(a.length>0 && "hello");
+// expected output: "hello"
+
+{true&&something} btraje3 el something deyman
+
+=====================
