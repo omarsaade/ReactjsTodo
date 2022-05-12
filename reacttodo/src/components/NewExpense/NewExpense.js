@@ -16,14 +16,23 @@ const NewExpense = (props) => {
         props.onAddExpense(expenseData);
     };
 
+    const hideForm = (el) => {
+        el.target.style.display = "none";
+        if (el.target.style.display == "none") {
+        }
+
+    }
 
 
 
 
-
-    return <div className='new-expense'>
-        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
-    </div>;
+    return (<div className='new-expense'>
+        <button onClick={hideForm}>Add New Expense</button>
+        <div style={{ display: 'none' }} >
+            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+        </div>
+    </div >
+    );
 }
 
 export default NewExpense;
