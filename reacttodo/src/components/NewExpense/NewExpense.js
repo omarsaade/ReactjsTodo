@@ -16,23 +16,18 @@ const NewExpense = (props) => {
         props.onAddExpense(expenseData);
     };
 
-    const hideForm = (el) => {
-        el.target.style.display = "none";
-        if (el.target.style.display == "none") {
-        }
-
-    }
-    //ah
 
 
 
 
-    return (<div className='new-expense'>
-        <button onClick={hideForm}>Add New Expense</button>
-        <div style={{ display: 'none' }} >
-            <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+
+
+    return (
+        <div className='new-expense'>
+            <div>
+                <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+            </div>
         </div>
-    </div >
     );
 }
 

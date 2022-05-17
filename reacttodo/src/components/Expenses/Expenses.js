@@ -26,11 +26,8 @@ const Expenses = (props) => {
     return (
         <div>
             <Card className="expenses">
-                {/* //filter */}
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-
                 <ExpensesList items={filteredExpenses} />
-                {/* {[<ExpensesFilter />, 8, 18, 32]} */}
             </Card>
         </div>
     );
