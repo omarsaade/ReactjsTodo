@@ -1,0 +1,12 @@
+.element-visible {
+  display: block;
+}
+.element-hidden {
+  display: none;
+}
+
+.b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

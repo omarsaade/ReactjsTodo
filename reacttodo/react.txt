@@ -632,3 +632,235 @@ console.log(a.length>0 && "hello");
 {true&&something} btraje3 el something deyman
 
 =====================
+new::::::::::::::::::::::::::::::::::
+
+import React from 'react';
+import ExpenseDate from '../Expenses/ExpenseDate';
+import ExpenseForm from './ExpenseForm';
+import './NewExpense.css'
+
+
+
+const NewExpense = (props) => {
+
+    const saveExpenseDataHandler = (enteredExpenseData) => {
+        const expenseData = {
+            ...enteredExpenseData,
+            id: Math.random().toString()
+        };
+        // console.log(expenseData);
+        props.onAddExpense(expenseData);
+    };
+
+    const Search = () => {
+        const [showResults, setShowResults] = React.useState(false)
+        const onClick = () => setShowResults(true)
+        return (
+            <div>
+                <input type="submit" value="Search" onClick={onClick} />
+                {showResults ? <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} /> : null}
+            </div>
+        )
+    }
+
+    const Results = () => (
+        <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+
+    )
+
+
+
+
+
+    return (
+        <div className='new-expense'>
+            <div>
+                <Search />
+            </div>
+        </div>
+    );
+}
+
+export default NewExpense;
+
+===========================
+adiman
+
+import React from 'react';
+import ExpenseDate from '../Expenses/ExpenseDate';
+import ExpenseForm from './ExpenseForm';
+import './NewExpense.css'
+
+
+
+const NewExpense = (props) => {
+
+    const saveExpenseDataHandler = (enteredExpenseData) => {
+        const expenseData = {
+            ...enteredExpenseData,
+            id: Math.random().toString()
+        };
+        // console.log(expenseData);
+        props.onAddExpense(expenseData);
+    };
+
+
+
+
+
+
+
+    return (
+        <div className='new-expense'>
+            <div>
+                <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+            </div>
+        </div>
+    );
+}
+
+export default NewExpense;
+
+==========================================
+7alle ana
+
+ExpenseForm.js
+
+import React, { useState } from 'react';
+import './ExpenseForm.css';
+import NewExpense from './NewExpense';
+
+const ExpenseForm = (props) => {
+
+    const [enteredTitle, setEnteredTitle] = useState("");
+    const [enteredAmount, setEnteredAmount] = useState("");
+    const [enteredDate, setEnteredDate] = useState("");
+
+    const titleChangeHandler = (event) => {
+        setEnteredTitle(event.target.value);
+    }
+    const amountChangeHandler = (event) => {
+        setEnteredAmount(event.target.value);
+    }
+    const dateChangeHandler = (event) => {
+        setEnteredDate(event.target.value);
+    }
+
+
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+        // console.log(expenseData);
+        props.onSaveExpenseData(expenseData);
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
+    };
+
+    //new
+    const ne = () => {
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
+    }
+
+
+
+    return (
+
+
+        <form onSubmit={submitHandler}>
+            <div className='new-expense__controls'>
+                <div className='new-expense__control'>
+                    <label>Title</label>
+                    <input type="text"
+                        onChange={titleChangeHandler}
+                        value={enteredTitle} />
+                </div>
+                <div className='new-expense__control'>
+                    <label>Amount</label>
+                    <input type="number"
+                        min="0.01"
+                        step="0.01"
+                        value={enteredAmount}
+                        onChange={amountChangeHandler} />
+                </div>
+                <div className='new-expense__control'>
+                    <label>Date</label>
+                    <input type="date" min="2019-01-01" max="2022-12-31"
+                        value={enteredDate}
+                        onChange={dateChangeHandler} />
+                </div>
+            </div>
+            <div className='new-expense__actions'>
+                <button onClick={ne}>Cancel</button>
+                <button type='submit'>Add Expense</button>
+            </div>
+        </form>
+
+    );
+};
+
+export default ExpenseForm;
+
+
+
+New Expense.js
+
+import React, { useState } from 'react';
+import ExpenseDate from '../Expenses/ExpenseDate';
+import ExpenseForm from './ExpenseForm';
+import './NewExpense.css'
+import '../Expenses/cancel.css'
+
+
+const NewExpense = (props) => {
+
+    const saveExpenseDataHandler = (enteredExpenseData) => {
+        const expenseData = {
+            ...enteredExpenseData,
+            id: Math.random().toString()
+        };
+        // console.log(expenseData);
+        props.onAddExpense(expenseData);
+    };
+
+
+
+
+    //new
+    const Search = () => {
+        const [showResults, setShowResults] = useState(false)
+        const onClick = () => setShowResults(true)
+        return (
+            <div className='b'>
+                <button className={showResults ? 'element-hidden' : 'element-visible'} onClick={onClick} >Add New Expense</button>
+                {showResults ? <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} /> : null}
+            </div>
+        )
+    }
+
+
+
+
+
+
+
+    return (
+        <div className='new-expense'>
+            <div>
+                <Search />
+            </div>
+        </div>
+    );
+}
+
+export default NewExpense;
+
+==============================================================================
